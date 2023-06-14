@@ -1,0 +1,37 @@
+
+# - Finds the sample package
+
+@PACKAGE_INIT@
+
+if (CMAKE_VERSION VERSION_LESS 3.0.2)
+    message(FATAL_ERROR \"@PROJECT_NAME@ requires at least CMake version 3.0.2\")
+endif()
+
+
+include(CMakeFindDependencyMacro)
+
+
+find_dependency(Qt5Widgets @QT_MINIMUM_VERSION@)
+find_dependency(Qt5LinguistTools @QT_MINIMUM_VERSION@)
+
+find_dependency(aldos-shared-module @SHAREDMODULE_MINIMUM_VERSION@)
+include(SmConfigVars)
+
+
+#  - Set version informations
+set(LIBSAMPLE_MAJOR_VERSION      "@LIBSAMPLE_MAJOR_VERSION@")
+set(LIBSAMPLE_MINOR_VERSION      "@LIBSAMPLE_MINOR_VERSION@")
+set(LIBSAMPLE_PATCH_VERSION      "@LIBSAMPLE_PATCH_VERSION@")
+set(LIBSAMPLE_VERSION            "@LIBSAMPLE_VERSION@")
+
+add_definitions("-DLIBSAMPLE_MAJOR_VERSION=\"${LIBSAMPLE_MAJOR_VERSION}\"")
+add_definitions("-DLIBSAMPLE_MINOR_VERSION=\"${LIBSAMPLE_MINOR_VERSION}\"")
+add_definitions("-DLIBSAMPLE_PATCH_VERSION=\"${LIBSAMPLE_PATCH_VERSION}\"")
+add_definitions("-DLIBSAMPLE_VERSION=\"${LIBSAMPLE_VERSION}\"")
+
+if (NOT TARGET @LIBSAMPLE_LIBRARY_NAME@)
+    if (POLICY CMP0024)
+        cmake_policy(SET CMP0024 NEW)
+    endif()
+    include("${CMAKE_CURRENT_LIST_DIR}/sample-targets.cmake")
+endif()

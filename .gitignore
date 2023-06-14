@@ -1,0 +1,5 @@
+build.log
+obj/
+tmp/
+build/
+*.o

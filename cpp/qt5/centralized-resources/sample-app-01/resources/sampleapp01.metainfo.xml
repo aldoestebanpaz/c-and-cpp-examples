@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>aldo.sample-app</id>
+  <url type="homepage">https://github.com/aldoestebanpaz/cpp-samples</url>
+  <url type="bugtracker">https://github.com/aldoestebanpaz/cpp-samples/issues</url>
+  <content_rating type="oars-1.1"/>
+
+  <name>Sample App 01</name>
+  <summary>Sample client app in Qt</summary>
+
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+
+  <description>
+    <p>
+      An application created with Cmake and Qt.
+      Features:
+    </p>
+    <ul>
+      <li>Cmake configuration system</li>
+      <li>Example of common Qt functions usage</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">sampleapp01.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/aldoestebanpaz/cpp-samples/raw/master/sampleapp01.png</image>
+    </screenshot>
+  </screenshots>
+</component>

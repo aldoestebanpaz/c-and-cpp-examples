@@ -1,0 +1,10 @@
+
+#include <QCoreApplication>
+#include <CentRes/Translator>
+
+static void loadAppTranslation()
+{
+    CentRes::Translator::translateApplication(QStringLiteral("@catalog_name@"));
+}
+
+Q_COREAPP_STARTUP_FUNCTION(loadAppTranslation)

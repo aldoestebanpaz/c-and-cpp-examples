@@ -1,0 +1,23 @@
+
+# Shared library
+#=============================================================================
+
+set(CENTRALIZED_RESOURCES_LIBRARY_NAME "@CENTRALIZED_RESOURCES_LIBRARY_NAME@")
+
+
+# Translations
+#=============================================================================
+
+set(CENTRALIZED_TRANSLATIONS_DIR    "@CENTRALIZED_TRANSLATIONS_DIR@")
+set(CENTRALIZED_RELATIVE_TRANSLATIONS_DIR    "@CENTRALIZED_RELATIVE_TRANSLATIONS_DIR@")
+
+add_definitions("-DCENTRALIZED_TRANSLATIONS_DIR=\"${CENTRALIZED_TRANSLATIONS_DIR}\"")
+add_definitions("-DCENTRALIZED_RELATIVE_TRANSLATIONS_DIR=\"${CENTRALIZED_RELATIVE_TRANSLATIONS_DIR}\"")
+
+
+# Graphics
+#=============================================================================
+
+set(CENTRALIZED_GRAPHICS_DIR    "@CENTRALIZED_GRAPHICS_DIR@")
+
+add_definitions("-DCENTRALIZED_GRAPHICS_DIR=\"${CENTRALIZED_GRAPHICS_DIR}\"")

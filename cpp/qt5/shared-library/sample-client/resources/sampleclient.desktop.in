@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=sampleclient
+Icon=sampleclient
+Terminal=false
+Type=Application
+# "Desktop Menu Specification > Appendix A, Registered Categories" enumerates the standard categories
+Categories=Utility;Qt;
+
+#TRANSLATIONS_DIR=translations

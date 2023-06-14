@@ -1,0 +1,77 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+	<interface name="com.aldos.dbus_sample.service">
+
+		<method name="methodNoArgsNoReturn"/>
+
+		<method name="methodWithAnnotationNoReply">
+			<annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+		</method>
+
+		<method name="methodSingleInputNoReturn">
+			<arg name="argInUnit64" type="t" direction="in"/>
+		</method>
+
+		<method name="methodSingleOutputNoReturn">
+			<arg name="argOutUnit64" type="t" direction="out"/>
+		</method>
+
+		<method name="methodSingleOutputNoReturn2">
+			<arg name="argOutString" type="s" direction="out"/>
+		</method>
+
+		<method name="methodMultipleInputsMultipleOutputsNoReturn">
+			<arg name="argInUnit32" type="u" direction="in"/>
+			<arg name="argInUnit64" type="t" direction="in"/>
+			<arg name="argInString" type="s" direction="in"/>
+			<arg name="argInArrayOfStrings" type="as" direction="in"/>
+			<arg name="argInObjectPath" type="o" direction="in"/>
+			<arg name="argInBoolean" type="b" direction="in"/>
+			<arg name="argOutString" type="s" direction="out"/>
+			<arg name="argOutUnit64" type="t" direction="out"/>
+			<arg name="argOutString2" type="s" direction="out"/>
+			<arg name="argOutBoolean" type="b" direction="out"/>
+		</method>
+
+		<method name="methodNoArgsStringReturn">
+			<arg type="s" direction="out"/>
+		</method>
+
+		<method name="methodNoArgsUnit32Return">
+			<arg type="u" direction="out"/>
+		</method>
+
+		<method name="methodNoArgsBooleanReturn">
+			<arg type="b" direction="out"/>
+		</method>
+
+		<method name="methodMultipleArgsStringReturn">
+			<arg name="argInUnit64" type="t" direction="in"/>
+			<arg type="s" direction="out"/>
+			<arg name="argOutUnit64" type="t" direction="out"/>
+		</method>
+
+		<method name="methodNoArgsArrayOfUnit64Return">
+			<annotation name="@QT_DBUS_PREFIX@.QtDBus.QtTypeName.Out0" value="QList&lt;qulonglong&gt;"/>
+			<arg type="at" direction="out"/>
+		</method>
+
+		<method name="methodNoArgsArrayOfDictEntriesReturn">
+			<annotation name="@QT_DBUS_PREFIX@.QtDBus.QtTypeName.Out0" value="QMap_qulonglong_GeneralActionInfo"/>
+			<arg type="a{t(ssbss)}" direction="out"/>
+			<!--
+				a: ARRAY,
+				{}: DICT_ENTRY,
+				    key   > t: UINT64,
+				    value > (ssbss): STRUCT of STRING,STRING,BOOLEAN,STRING,STRING
+			-->
+			<!-- GeneralActionInfo = s:shortcut, s:description, b:enabled, s:type, s:info -->
+		</method>
+
+		<signal name="signalOneArg">
+			<arg name="argUnit64" type="t"/>
+		</signal>
+
+	</interface>
+</node>
