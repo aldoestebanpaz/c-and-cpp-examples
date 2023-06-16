@@ -48,7 +48,7 @@ REM ************************************************
 REM  Run
 REM ************************************************
 
-REM open the program in another windows, wait and keep it open
+REM open the program in another window, wait and keep it open
 start /wait cmd /k %CURRENT_SCRIPT_DIR%\tmp\bin\MutexAndConditionVariableApp.exe
 
 
