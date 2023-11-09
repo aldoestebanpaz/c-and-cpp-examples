@@ -59,6 +59,7 @@ file(GLOB toInstallModulesForTranslation
 #-----------------------------------------------------------------------------
 
 set(MODULES_INSTALL_DIR "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/${MODULE_NAME}/cmake/modules")
+#set(MODULES_INSTALL_DIR "${PROJECT_BINARY_DIR}/${MODULE_NAME}/${MODULE_NAME}/cmake/modules")
 
 file(COPY
     ${toInstallModules}
@@ -73,7 +74,7 @@ file(COPY
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/shared-module-config.cmake.in"
     "${CMAKE_BINARY_DIR}/${MODULE_NAME}-config.cmake"
-    INSTALL_DESTINATION "NOT-IMPORTANT"    # it will not be installed but generated using absolute dirs in PATH_VARS, so relative directories does not need to be calculated.
+    INSTALL_DESTINATION "neverland"    # it will not be installed but generated using absolute dirs in PATH_VARS, so relative directories does not need to be calculated.
     PATH_VARS
         MODULES_INSTALL_DIR
 )

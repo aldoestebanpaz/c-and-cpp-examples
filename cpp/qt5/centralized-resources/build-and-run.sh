@@ -140,4 +140,5 @@ cd ${CURRENT_SCRIPT_DIR}/sample-app-01
 xargs rm < build/install_manifest.txt
 rm -rf build
 
+cd ${CURRENT_SCRIPT_DIR}
 rm -rf tmp

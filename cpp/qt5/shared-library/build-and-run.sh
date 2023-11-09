@@ -111,4 +111,5 @@ cd ${CURRENT_SCRIPT_DIR}/sample-client
 xargs rm < build/install_manifest.txt
 rm -rf build
 
+cd ${CURRENT_SCRIPT_DIR}
 rm -rf tmp
